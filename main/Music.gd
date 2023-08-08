@@ -1,10 +1,10 @@
 extends Node
 
-@export (float) var cross_fade_duration = 2.0
+@export var cross_fade_duration : float = 2.0
 
 signal song_finished (song)
 
-@onready var tween = $Tween
+@onready var tween = Tween.new()
 
 var current_song
 var initial_volume_dbs := {}

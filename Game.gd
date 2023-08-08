@@ -2,21 +2,21 @@ extends Node2D
 
 var Player = preload("res://actors/Player.tscn")
 
-@export (PackedScene) var map_scene = preload("res://maps/Map1.tscn")
+@export var map_scene : PackedScene = preload("res://maps/Map1.tscn")
 
 @onready var map: Node2D = $Map
 @onready var players_node := $Players
 @onready var camera := $Camera2D
 @onready var original_camera_position: Vector2 = camera.global_position
 
-var game_started := false
-var game_over := false
+var game_started : bool = false
+var game_over : bool = false
 var players_alive := {}
 var players_setup := {}
 
-signal game_started ()
+signal s_game_started ()
 signal player_dead (peer_id)
-signal game_over (peer_id)
+signal s_game_over (peer_id)
 
 func game_start(players: Dictionary) -> void:
 	if GameState.online_play:
@@ -79,7 +79,7 @@ func game_start(players: Dictionary) -> void:
 @rpc("any_peer", "call_local") func _do_game_start() -> void:
 	if map.has_method('map_start'):
 		map.map_start()
-	emit_signal("game_started")
+	emit_signal("s_game_started")
 	get_tree().set_pause(false)
 
 func game_stop() -> void:
@@ -128,4 +128,4 @@ func _on_player_dead(peer_id) -> void:
 	if not game_over and players_alive.size() == 1:
 		game_over = true
 		var player_keys = players_alive.keys()
-		emit_signal("game_over", player_keys[0])
+		emit_signal("s_game_over", player_keys[0])

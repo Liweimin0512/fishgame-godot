@@ -6,7 +6,7 @@ class_name UILayer
 @onready var back_button = $Overlay/BackButton
 
 signal change_screen (name, screen)
-signal back_button ()
+signal s_back_button ()
 
 var current_screen: Control = null: set = _set_readonly_variable
 var current_screen_name: String = '': get = get_current_screen_name, set = _set_readonly_variable
@@ -70,7 +70,7 @@ func hide_all() -> void:
 	hide_back_button()
 
 func _on_BackButton_pressed() -> void:
-	emit_signal("back_button")
+	emit_signal("s_back_button")
 
 func _on_MuteButton_toggled(button_pressed: bool) -> void:
 	AudioServer.set_bus_mute(0, button_pressed)
