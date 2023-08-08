@@ -1,20 +1,20 @@
 [gd_scene load_steps=19 format=3 uid="uid://8kpreumaty8x"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
-[ext_resource type="PackedScene" path="res://main/screens/ConnectionScreen.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://Game.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://main/screens/MatchScreen.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b5w1vwt4xf8b6" path="res://main/screens/ConnectionScreen.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dve22cg5gci8m" path="res://Game.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dn5ajc8cr2wme" path="res://main/screens/MatchScreen.tscn" id="4"]
 [ext_resource type="Script" path="res://main/UILayer.gd" id="5"]
-[ext_resource type="PackedScene" path="res://main/screens/ReadyScreen.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://main/screens/TitleScreen.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://djuml6mdrbmxp" path="res://main/screens/ReadyScreen.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bibe45jnq7ia8" path="res://main/screens/TitleScreen.tscn" id="7"]
 [ext_resource type="FontFile" path="res://assets/fonts/monogram.tres" id="8"]
 [ext_resource type="Script" path="res://main/Music.gd" id="9"]
 [ext_resource type="AudioStream" uid="uid://18lhf8nrxhn8" path="res://assets/music/BUILD UP.ogg" id="10"]
 [ext_resource type="AudioStream" uid="uid://bkmv8wvttnowq" path="res://assets/music/THEME #1.ogg" id="11"]
 [ext_resource type="AudioStream" uid="uid://evjqcofd3eyl" path="res://assets/music/DOMEFIGHTERS.ogg" id="12"]
 [ext_resource type="AudioStream" uid="uid://cm1abs1u4v4rw" path="res://assets/music/FISHSTICKS.ogg" id="13"]
-[ext_resource type="PackedScene" path="res://main/screens/LeaderboardScreen.tscn" id="14"]
-[ext_resource type="PackedScene" path="res://main/screens/CreditsScreen.tscn" id="15"]
+[ext_resource type="PackedScene" uid="uid://dh22xdaidomuj" path="res://main/screens/LeaderboardScreen.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://30liqm3pgq7a" path="res://main/screens/CreditsScreen.tscn" id="15"]
 [ext_resource type="Script" path="res://main/screens/TransparentButton.gd" id="17"]
 [ext_resource type="Texture2D" uid="uid://bd6qu0t4egnbv" path="res://assets/ui/mute.png" id="18"]
 [ext_resource type="Texture2D" uid="uid://bsds430314vad" path="res://assets/ui/close.png" id="19"]
@@ -33,36 +33,62 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TitleScreen" parent="UILayer/Screens" instance=ExtResource("7")]
 visible = false
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="ConnectionScreen" parent="UILayer/Screens" instance=ExtResource("2")]
 visible = false
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="MatchScreen" parent="UILayer/Screens" instance=ExtResource("4")]
 visible = false
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="ReadyScreen" parent="UILayer/Screens" instance=ExtResource("6")]
 visible = false
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="LeaderboardScreen" parent="UILayer/Screens" instance=ExtResource("14")]
 visible = false
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="CreditsScreen" parent="UILayer/Screens" instance=ExtResource("15")]
 visible = false
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="Overlay" type="Control" parent="UILayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="Message" type="Label" parent="UILayer/Overlay"]
@@ -87,9 +113,6 @@ focus_mode = 0
 icon = ExtResource("19")
 clip_text = true
 script = ExtResource("17")
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MuteButton" type="Button" parent="UILayer/Overlay"]
 layout_mode = 0
@@ -102,9 +125,6 @@ toggle_mode = true
 icon = ExtResource("18")
 clip_text = true
 script = ExtResource("17")
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Music" type="Node" parent="."]
 script = ExtResource("9")

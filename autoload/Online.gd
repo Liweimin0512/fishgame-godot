@@ -55,11 +55,11 @@ func connect_nakama_socket() -> void:
 	_nakama_socket_connecting = true
 
 	var new_socket = Nakama.create_socket_from(nakama_client)
-	await new_socket.connect_async(nakama_session).completed
+	await new_socket.connect_async(nakama_session)
 	nakama_socket = new_socket
 	_nakama_socket_connecting = false
 
 	emit_signal("socket_connected", nakama_socket)
 
 func is_nakama_socket_connected() -> bool:
-	   return nakama_socket != null && nakama_socket.is_connected_to_host()
+	return nakama_socket != null && nakama_socket.is_connected_to_host()

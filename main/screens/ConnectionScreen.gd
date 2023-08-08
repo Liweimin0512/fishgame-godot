@@ -13,12 +13,13 @@ var _reconnect: bool = false
 var _next_screen
 
 func _ready() -> void:
-	var file = File.new()
-	if file.file_exists(CREDENTIALS_FILENAME):
-		file.open(CREDENTIALS_FILENAME, File.READ)
-		var test_json_conv = JSON.new()
-		test_json_conv.parse(file.get_as_text())
-		var result := test_json_conv.get_data()
+#	var file = File.new()
+	if FileAccess.file_exists(CREDENTIALS_FILENAME):
+		var file : FileAccess = FileAccess.open(CREDENTIALS_FILENAME, FileAccess.READ)
+		var test_json_conv : JSON = JSON.new()
+		var error = test_json_conv.parse(file.get_as_text())
+		assert(error == OK, test_json_conv.get_error_message())
+		var result : Dictionary = test_json_conv.get_data()
 		if result.result is Dictionary:
 			email = result.result['email']
 			password = result.result['password']
@@ -27,8 +28,8 @@ func _ready() -> void:
 		file.close()
 
 func _save_credentials() -> void:
-	var file = File.new()
-	file.open(CREDENTIALS_FILENAME, File.WRITE)
+#	var file = File.new()
+	var file = FileAccess.open(CREDENTIALS_FILENAME, FileAccess.WRITE)
 	var credentials = {
 		email = email,
 		password = password,
@@ -54,7 +55,7 @@ func do_login(save_credentials: bool = false) -> void:
 	else:
 		ui_layer.show_message("Logging in...")
 	
-	var nakama_session = await Online.nakama_client.authenticate_email_async(email, password, null, false).completed
+	var nakama_session = await Online.nakama_client.authenticate_email_async(email, password, null, false)
 	
 	if nakama_session.is_exception():
 		visible = true
@@ -102,7 +103,7 @@ func _on_CreateAccountButton_pressed() -> void:
 	visible = false
 	ui_layer.show_message("Creating account...")
 
-	var nakama_session = await Online.nakama_client.authenticate_email_async(email, password, username, true).completed
+	var nakama_session = await Online.nakama_client.authenticate_email_async(email, password, username, true)
 	
 	if nakama_session.is_exception():
 		visible = true

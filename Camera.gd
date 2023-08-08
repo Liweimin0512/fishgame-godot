@@ -1,9 +1,9 @@
 extends Camera2D
 
-@export (NodePath) var player_container_path
-@export (float, 0.1, 0.5) var zoom_offset := 0.2
+@export var player_container_path : NodePath
+@export_range(0.1, 0.5)var zoom_offset : float= 0.2
 
-@export (float) var custom_smoothing := 2.0
+@export var custom_smoothing : float = 2.0
 
 var player_container: Node2D
 
@@ -14,7 +14,7 @@ func _center_position(pos: Vector2) -> Vector2:
 	return pos - Vector2(0, 35)
 
 func update_position_and_zoom(custom_smoothing_enabled: bool = true) -> void:
-	if not player_container_path:
+	if player_container_path == null:
 		return
 	
 	if not player_container:

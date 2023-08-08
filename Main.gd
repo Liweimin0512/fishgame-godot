@@ -98,8 +98,8 @@ func _on_OnlineMatch_player_left(player) -> void:
 func _on_OnlineMatch_player_joined(player) -> void:
 	if get_tree().is_server():
 		# Tell this new player about all the other players that are already ready.
-		for player in players_ready.values():
-			rpc_id(player.peer_id, "player_ready", player.peer_id)
+		for p in players_ready.values():
+			rpc_id(p.peer_id, "player_ready", p.peer_id)
 
 #####
 # Gameplay methods and callbacks

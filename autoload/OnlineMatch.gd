@@ -152,7 +152,7 @@ func start_matchmaking(_nakama_socket: NakamaSocket, data: Dictionary = {}) -> v
 			data['query'] = query
 
 	match_state = MatchState.MATCHING
-	var result = await nakama_socket.add_matchmaker_async(data.get('query', '*'), data['min_count'], data['max_count'], data.get('string_properties', {}), data.get('numeric_properties', {})).completed
+	var result = await nakama_socket.add_matchmaker_async(data.get('query', '*'), data['min_count'], data['max_count'], data.get('string_properties', {}), data.get('numeric_properties', {}))
 	if result.is_exception():
 		leave()
 		emit_signal("error", "Unable to join match making pool")
@@ -170,7 +170,7 @@ func leave(close_socket: bool = false) -> void:
 		nakama_multiplayer_bridge.leave()
 	if nakama_socket:
 		if matchmaker_ticket:
-			await nakama_socket.remove_matchmaker_async(matchmaker_ticket).completed
+			await nakama_socket.remove_matchmaker_async(matchmaker_ticket)
 		if close_socket:
 			nakama_socket.close()
 			_set_nakama_socket(null)
@@ -211,18 +211,18 @@ func _check_enough_players() -> void:
 		emit_signal("match_not_ready")
 
 func _on_match_joined() -> void:
-	var my_peer_id := get_tree().get_unique_id()
-	var presence: NakamaRTAPI.UserPresence = nakama_multiplayer_bridge.get_user_presence_for_peer(my_peer_id)
-	var player = Player.from_presence(presence, my_peer_id)
+	var my_peer_id := OS.get_unique_id()
+	var presence: NakamaRTAPI.UserPresence = nakama_multiplayer_bridge.get_user_presence_for_peer(my_peer_id.to_int())
+	var player = Player.from_presence(presence, my_peer_id.to_int())
 	players[my_peer_id] = player
 	emit_signal("match_joined", nakama_multiplayer_bridge.match_id, match_mode)
 
-The master and mastersync rpc behavior is not officially supported anymore. Try using another keyword or making custom logic using get_multiplayer().get_remote_sender_id()
+# The master and mastersync rpc behavior is not officially supported anymore. Try using another keyword or making custom logic using get_multiplayer().get_remote_sender_id()
 @rpc func _boot_with_error(msg: String) -> void:
 	leave()
 	emit_signal("error", msg)
 
-The master and mastersync rpc behavior is not officially supported anymore. Try using another keyword or making custom logic using get_multiplayer().get_remote_sender_id()
+# The master and mastersync rpc behavior is not officially supported anymore. Try using another keyword or making custom logic using get_multiplayer().get_remote_sender_id()
 @rpc func _check_client_version(host_client_version: String) -> void:
 	if client_version != host_client_version:
 		leave()
