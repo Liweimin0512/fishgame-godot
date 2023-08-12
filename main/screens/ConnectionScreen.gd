@@ -20,9 +20,9 @@ func _ready() -> void:
 		var error = test_json_conv.parse(file.get_as_text())
 		assert(error == OK, test_json_conv.get_error_message())
 		var result : Dictionary = test_json_conv.get_data()
-		if result.result is Dictionary:
-			email = result.result['email']
-			password = result.result['password']
+		if result is Dictionary:
+			email = result['email']
+			password = result['password']
 			login_email_field.text = email
 			login_password_field.text = password
 		file.close()
