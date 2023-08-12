@@ -105,7 +105,8 @@ func _on_OnlineMatch_player_joined(player) -> void:
 # Gameplay methods and callbacks
 #####
 
-@rpc("any_peer", "call_local") func player_ready(peer_id: int) -> void:
+@rpc("any_peer", "call_local") 
+func player_ready(peer_id: int) -> void:
 	ready_screen.set_status(peer_id, "READY!")
 
 	if get_tree().is_server() and not players_ready.has(peer_id):
@@ -176,7 +177,8 @@ func update_wins_leaderboard() -> void:
 
 	Online.nakama_client.write_leaderboard_record_async(Online.nakama_session, 'fish_game_wins', 1)
 
-@rpc("any_peer", "call_local") func show_winner(name: String, peer_id: int = 0, score: int = 0, is_match: bool = false) -> void:
+@rpc("any_peer", "call_local") 
+func show_winner(name: String, peer_id: int = 0, score: int = 0, is_match: bool = false) -> void:
 	if is_match:
 		ui_layer.show_message(name + " WINS THE WHOLE MATCH!")
 	else:

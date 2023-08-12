@@ -5,6 +5,9 @@
 [ext_resource type="Script" path="res://main/screens/TitleScreen.gd" id="3"]
 
 [sub_resource type="FontFile" id="1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 fallbacks = Array[Font]([ExtResource("1")])
 face_index = null
 embolden = null
@@ -21,6 +24,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2")
 script = ExtResource("3")
 
@@ -37,6 +42,8 @@ offset_top = 25.0
 offset_bottom = 130.0
 theme_override_fonts/font = SubResource("1")
 text = "Fish Game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 125)
@@ -65,5 +72,6 @@ layout_mode = 2
 text = "Credits"
 
 [connection signal="pressed" from="HBoxContainer/LocalButton" to="." method="_on_LocalButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/LocalButton" to="HBoxContainer/LocalButton" method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer/OnlineButton" to="." method="_on_OnlineButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
