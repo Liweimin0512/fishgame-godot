@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://c7an3fa5i4761"]
 
 [ext_resource type="Script" path="res://maps/Map.gd" id="1"]
-[ext_resource type="TileSet" path="res://assets/tilesets/tileset.tres" id="2"]
-[ext_resource type="PackedScene" path="res://objects/TimedGenerator.tscn" id="3"]
+[ext_resource type="TileSet" uid="uid://s8wq167dgiik" path="res://assets/tilesets/tileset.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://bjjgo4roshotm" path="res://objects/TimedGenerator.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://bvbd222fkc6d8" path="res://pickups/Gun.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://pickups/Sword.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://maps/StaticBackground.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://objects/Seaweed.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://objects/Barnacles.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://bdbr3dk55osvu" path="res://pickups/Sword.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c53gxyugvcfy3" path="res://maps/StaticBackground.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://nmvdk1232dts" path="res://objects/Seaweed.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://cksq7s6fmcqgt" path="res://objects/Barnacles.tscn" id="8"]
 
 [node name="Map2" type="Node2D"]
 script = ExtResource("1")
