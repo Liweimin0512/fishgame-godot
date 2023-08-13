@@ -25,7 +25,8 @@ func game_start(players: Dictionary) -> void:
 		_do_game_setup(players)
 
 # Initializes the game so that it is ready to really start.
-@rpc("any_peer", "call_local") func _do_game_setup(players: Dictionary) -> void:
+@rpc("any_peer", "call_local") 
+func _do_game_setup(players: Dictionary) -> void:
 	get_tree().set_pause(true)
 
 	if game_started:
@@ -70,14 +71,16 @@ func game_start(players: Dictionary) -> void:
 		_do_game_start()
 
 # Records when each player has finished setup so we know when all players are ready.
-@rpc("any_peer", "call_local") func _finished_game_setup(peer_id: int) -> void:
+@rpc("any_peer", "call_local") 
+func _finished_game_setup(peer_id: int) -> void:
 	players_setup[peer_id] = players_alive[peer_id]
 	if players_setup.size() == players_alive.size():
 		# Once all clients have finished setup, tell them to start the game.
 		rpc('_do_game_start')
 
 # Actually start the game on this client.
-@rpc("any_peer", "call_local") func _do_game_start() -> void:
+@rpc("any_peer", "call_local") 
+func _do_game_start() -> void:
 	if map.has_method('map_start'):
 		map.map_start()
 	emit_signal("s_game_started")
