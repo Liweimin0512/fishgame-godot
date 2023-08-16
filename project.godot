@@ -30,7 +30,7 @@ window/size/viewport_width=640
 window/size/viewport_height=380
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/aspect="keep_width"
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

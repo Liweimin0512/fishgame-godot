@@ -8,13 +8,10 @@ class_name UILayer
 signal change_screen (name, screen)
 signal s_back_button ()
 
-var current_screen: Control = null: set = _set_readonly_variable
-var current_screen_name: String = '': get = get_current_screen_name, set = _set_readonly_variable
+var current_screen: Control = null
+var current_screen_name: String = '': get = get_current_screen_name
 
 var _is_ready := false
-
-func _set_readonly_variable(_value) -> void:
-	pass
 
 func _ready() -> void:
 	for screen in screens.get_children():
