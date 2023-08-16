@@ -10,9 +10,9 @@ script = ExtResource("2")
 
 [node name="Players" type="Node2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player_container")]
 zoom = Vector2(0.5, 0.5)
 limit_bottom = 0
 script = ExtResource("1")
-player_container_path = NodePath("../Players")
+player_container = NodePath("../Players")
 zoom_offset = 0.5

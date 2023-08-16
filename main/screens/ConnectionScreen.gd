@@ -81,7 +81,7 @@ func do_login(save_credentials: bool = false) -> void:
 func _on_LoginButton_pressed() -> void:
 	email = login_email_field.text.strip_edges()
 	password = login_password_field.text.strip_edges()
-	do_login($TabContainer/Login/GridContainer/SaveCheckBox.pressed)
+	do_login($TabContainer/Login/GridContainer/SaveCheckBox.button_pressed)
 
 func _on_CreateAccountButton_pressed() -> void:
 	email = $"TabContainer/Create Account/GridContainer/Email".text.strip_edges()
