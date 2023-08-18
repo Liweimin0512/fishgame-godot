@@ -14,4 +14,3 @@ script = ExtResource("2")
 limit_bottom = 0
 script = ExtResource("1")
 player_container_path = NodePath("../Players")
-zoom_offset = 0.5

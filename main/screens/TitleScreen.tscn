@@ -48,16 +48,19 @@ alignment = 1
 [node name="LocalButton" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 44
 text = "Local"
 
 [node name="OnlineButton" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 44
 text = "Online"
 
 [node name="CreditsButton" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 44
 text = "Credits"
 
 [connection signal="pressed" from="HBoxContainer/LocalButton" to="." method="_on_LocalButton_pressed"]
