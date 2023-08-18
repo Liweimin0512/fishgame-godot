@@ -1,26 +1,21 @@
 extends Camera2D
 
-@export var player_container_path : NodePath
+@export var player_container : Node2D
 @export_range(0.1, 0.5)var zoom_offset : float= 0.2
 
 @export var custom_smoothing : float = 2.0
-
-var player_container: Node2D
+@export var custom_smoothing_enabled : bool = true
+#var player_container: Node2D
 
 func _physics_process(delta: float) -> void:
-	update_position_and_zoom()
+	update_position_and_zoom(custom_smoothing_enabled)
 
 func _center_position(pos: Vector2) -> Vector2:
 	return pos - Vector2(0, 35)
 
 func update_position_and_zoom(custom_smoothing_enabled: bool = true) -> void:
-	if player_container_path == null:
-		return
-	
 	if not player_container:
-		player_container = get_node(player_container_path)
-		if not player_container:
-			return
+		return
 	
 	var count := player_container.get_child_count()
 	if count == 0:
