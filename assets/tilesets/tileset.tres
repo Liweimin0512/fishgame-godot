@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b0lrctd12eygx"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b0lrctd12eygx"]
 
 [ext_resource type="Texture2D" uid="uid://bbs1qfy8v4o42" path="res://assets/tilesets/tileset1.png" id="1"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_k7fhr"]
+tile_data = PackedInt32Array(0, 0, 8, 1, 131072, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teyao"]
 texture = ExtResource("1")
@@ -402,3 +405,4 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "env"
 terrain_set_0/terrain_0/color = Color(1, 0, 0, 1)
 sources/0 = SubResource("TileSetAtlasSource_teyao")
+pattern_0 = SubResource("TileMapPattern_k7fhr")
