@@ -1,61 +1,70 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://30liqm3pgq7a"]
 
-[ext_resource path="res://assets/fonts/monogram.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/theme.tres" type="Theme" id=2]
+[ext_resource type="FontFile" uid="uid://h2betnbh6r45" path="res://assets/fonts/monogram.ttf" id="1"]
+[ext_resource type="Theme" path="res://assets/theme.tres" id="2"]
 
-[sub_resource type="DynamicFont" id=1]
-size = 28
-extra_spacing_bottom = 3
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/16/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/16/0/glyphs/0/size = Vector2(0, 0)
+cache/0/16/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/16/0/glyphs/0/texture_idx = -1
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=2]
-size = 24
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="CreditsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 anchor_right = 1.0
-margin_top = 25.0
-margin_bottom = 48.0
+offset_top = 25.0
+offset_bottom = 48.0
 text = "Credits"
-align = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 89.0
-margin_right = -15.0
-margin_bottom = -15.0
-custom_fonts/bold_font = SubResource( 1 )
-custom_fonts/normal_font = SubResource( 2 )
+offset_left = 15.0
+offset_top = 89.0
+offset_right = -15.0
+offset_bottom = -15.0
+theme_override_fonts/normal_font = SubResource("2")
+theme_override_fonts/bold_font = SubResource("1")
 bbcode_enabled = true
-bbcode_text = "[b]Programming:[/b]
-	[color=aqua]David Snopek[/color] from [color=yellow][url=https://www.snopekgames.com]Snopek Games[/url][/color]
-
-[b]Art:[/b]
-	[color=aqua]Orlando Herrera[/color] a.k.a. [color=yellow][url=https://pixelfrog-store.itch.io/]Pixel Frog[/url][/color]
-
-[b]Music/Sound:[/b]
-	[color=aqua]Jakob T. Rypdal[/color]
-
-[b]Font:[/b]
-	[color=yellow][url=https://datagoblin.itch.io/monogram]Monogram[/url][/color] by [color=aqua]Vinícius Menézio[/color]"
 text = "Programming:
 	David Snopek from Snopek Games
 
@@ -68,6 +77,3 @@ Music/Sound:
 Font:
 	Monogram by Vinícius Menézio"
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}

@@ -1,20 +1,17 @@
 extends CanvasLayer
 class_name UILayer
 
-onready var screens = $Screens
-onready var message_label = $Overlay/Message
-onready var back_button = $Overlay/BackButton
+@onready var screens = $Screens
+@onready var message_label = $Overlay/Message
+@onready var back_button = $Overlay/BackButton
 
 signal change_screen (name, screen)
-signal back_button ()
+signal s_back_button ()
 
-var current_screen: Control = null setget _set_readonly_variable
-var current_screen_name: String = '' setget _set_readonly_variable, get_current_screen_name
+var current_screen: Control = null
+var current_screen_name: String = '': get = get_current_screen_name
 
 var _is_ready := false
-
-func _set_readonly_variable(_value) -> void:
-	pass
 
 func _ready() -> void:
 	for screen in screens.get_children():
@@ -70,7 +67,7 @@ func hide_all() -> void:
 	hide_back_button()
 
 func _on_BackButton_pressed() -> void:
-	emit_signal("back_button")
+	emit_signal("s_back_button")
 
 func _on_MuteButton_toggled(button_pressed: bool) -> void:
 	AudioServer.set_bus_mute(0, button_pressed)
