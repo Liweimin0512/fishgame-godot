@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5w1vwt4xf8b6"]
 
-[ext_resource type="Theme" path="res://assets/theme.tres" id="1"]
+[ext_resource type="Theme" uid="uid://cf6xj5pmspetf" path="res://assets/theme.tres" id="1"]
 [ext_resource type="FontFile" uid="uid://h2betnbh6r45" path="res://assets/fonts/monogram.ttf" id="2"]
-[ext_resource type="FontFile" path="res://assets/fonts/monogram.tres" id="3"]
+[ext_resource type="FontFile" uid="uid://dhx8gu2qdp85d" path="res://assets/fonts/monogram.tres" id="3"]
 [ext_resource type="Script" path="res://main/screens/ConnectionScreen.gd" id="4"]
 
 [sub_resource type="FontFile" id="1"]

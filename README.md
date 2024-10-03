@@ -1,6 +1,8 @@
 "Fish Game" for Godot
 =====================
 
+[中文文档](/README.CN.md)
+
 **"Fish Game" for Godot** is a 2-4 player online game built in the
 [Godot](https://godotengine.org/) game engine, created as a demonstration of
 [Nakama](https://heroiclabs.com/), an open-source scalable game server.
@@ -100,4 +102,3 @@ This project is licensed under the Apache 2.0 License, with the following except
 * The remaining art, music and sound assets are licensed under the [CC BY-NC License](https://github.com/heroiclabs/fishgame-godot/blob/main/assets/LICENSE.txt).
 * The [Snopek State Machine](https://gitlab.com/snopek-games/godot-state-machine) included in [addons/snopek-state-machine/](https://github.com/heroiclabs/fishgame-godot/tree/main/addons/snopek-state-machine) is licensed under the MIT License.
 * Most of the UI code (included in [main/](https://github.com/heroiclabs/fishgame-godot/tree/main/main)) and some other auxilary code files originate from the [WebRTC and Nakama addon for Godot](https://gitlab.com/snopek-games/godot-nakama-webrtc), which is licensed under the MIT License.
-
