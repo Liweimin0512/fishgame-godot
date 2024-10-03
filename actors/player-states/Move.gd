@@ -49,5 +49,3 @@ func do_move(input_vector: Vector2) -> void:
 		host.vector.x = max(input_vector.x * host.speed, host.vector.x - (host.acceleration * delta))
 	else:
 		_decelerate_to_zero(delta)
-
-

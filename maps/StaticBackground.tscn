@@ -9,17 +9,21 @@
 layer = -100
 
 [node name="Sprite1" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2")
 centered = false
 
 [node name="Sprite2" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1")
 centered = false
 
 [node name="Sprite3" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("4")
 centered = false
 
 [node name="Sprite4" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3")
 centered = false

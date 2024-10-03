@@ -6,13 +6,10 @@
 [ext_resource type="Script" path="res://main/screens/ConnectionScreen.gd" id="4"]
 
 [sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("2")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-fallbacks = Array[Font]([ExtResource("2")])
-face_index = null
-embolden = null
-transform = null
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -38,9 +35,11 @@ offset_left = 50.0
 offset_top = 50.0
 offset_right = -50.0
 offset_bottom = -50.0
+current_tab = 0
 
 [node name="Login" type="Control" parent="TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/Login"]
 layout_mode = 0
@@ -74,8 +73,8 @@ text = "Password:"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3")
-secret = true
 caret_blink = true
+secret = true
 
 [node name="Empty" type="Control" parent="TabContainer/Login/GridContainer"]
 layout_mode = 2
@@ -99,6 +98,7 @@ text = "Login"
 [node name="Create Account" type="Control" parent="TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/Create Account"]
 layout_mode = 0
@@ -137,8 +137,8 @@ text = "Password:"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3")
-secret = true
 caret_blink = true
+secret = true
 
 [node name="Empty" type="Control" parent="TabContainer/Create Account/GridContainer"]
 layout_mode = 2

@@ -297,4 +297,3 @@ func _physics_process(delta: float) -> void:
 func _on_StateMachine_state_changed(state, info: Dictionary) -> void:
 	sync_forced = true
 	sync_state_info = info
-

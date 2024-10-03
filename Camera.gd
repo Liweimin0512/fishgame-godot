@@ -1,14 +1,11 @@
 extends Camera2D
 
 @export var player_container : Node2D
-@export_range(0.1, 0.5)var zoom_offset : float= 0.2
-
-@export var custom_smoothing : float = 2.0
-@export var custom_smoothing_enabled : bool = true
-#var player_container: Node2D
+@export_range(0.1, 0.5) var zoom_offset := 0.2
+@export var custom_smoothing := 2.0
 
 func _physics_process(delta: float) -> void:
-	update_position_and_zoom(custom_smoothing_enabled)
+	update_position_and_zoom()
 
 func _center_position(pos: Vector2) -> Vector2:
 	return pos - Vector2(0, 35)
@@ -54,8 +51,7 @@ func calculate_center(camera_rect: Rect2) -> Vector2:
 		camera_rect.position.y + (camera_rect.size.y / 2))
 
 func calculate_zoom(camera_rect: Rect2, viewport_size: Vector2) -> Vector2:
-	var zoom = max(
+	var zoom = 1/ max(
 		max(1.0, (camera_rect.size.x / viewport_size.x) + zoom_offset),
 		max(1.0, (camera_rect.size.y / viewport_size.y) + zoom_offset))
 	return Vector2(zoom, zoom)
-	

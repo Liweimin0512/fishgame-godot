@@ -21,6 +21,8 @@ func _ready() -> void:
 	randomize()
 	music.play_random()
 
+	print(get_viewport_rect())
+
 #####
 # UI callbacks
 #####

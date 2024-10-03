@@ -11,7 +11,7 @@ script = ExtResource("2")
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player_container")]
-zoom = Vector2(0.5, 0.5)
+position = Vector2(420, -350)
 limit_bottom = 0
 script = ExtResource("1")
 player_container = NodePath("../Players")

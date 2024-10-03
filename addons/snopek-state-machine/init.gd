@@ -8,5 +8,3 @@ func _enter_tree():
 func _exit_tree():
 	remove_custom_type("StateMachine")
 	remove_custom_type("State")
-
-

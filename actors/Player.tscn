@@ -530,16 +530,16 @@ one_shot = true
 script = ExtResource("3")
 
 [node name="SpriteAnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_3wyfg")
 }
+autoplay = "Idle"
 
 [node name="PickupAnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_56rot")
 }
+autoplay = "Idle"
 
 [node name="Sounds" type="Node" parent="."]
 script = ExtResource("6")
