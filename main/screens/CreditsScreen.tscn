@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://30liqm3pgq7a"]
 
 [ext_resource type="FontFile" uid="uid://h2betnbh6r45" path="res://assets/fonts/monogram.ttf" id="1"]
-[ext_resource type="Theme" path="res://assets/theme.tres" id="2"]
+[ext_resource type="Theme" uid="uid://cf6xj5pmspetf" path="res://assets/theme.tres" id="2"]
 
 [sub_resource type="FontFile" id="2"]
 fallbacks = Array[Font]([ExtResource("1")])

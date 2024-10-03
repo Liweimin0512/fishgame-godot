@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://main/UILayer.gd" id="5"]
 [ext_resource type="PackedScene" uid="uid://djuml6mdrbmxp" path="res://main/screens/ReadyScreen.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bibe45jnq7ia8" path="res://main/screens/TitleScreen.tscn" id="7"]
-[ext_resource type="FontFile" path="res://assets/fonts/monogram.tres" id="8"]
+[ext_resource type="FontFile" uid="uid://dhx8gu2qdp85d" path="res://assets/fonts/monogram.tres" id="8"]
 [ext_resource type="Script" path="res://main/Music.gd" id="9"]
 [ext_resource type="AudioStream" uid="uid://18lhf8nrxhn8" path="res://assets/music/BUILD UP.ogg" id="10"]
 [ext_resource type="AudioStream" uid="uid://bkmv8wvttnowq" path="res://assets/music/THEME #1.ogg" id="11"]
